@@ -1,0 +1,43 @@
+<div class="blog-single gray-bg">
+  <div class="container">
+    <div class="row align-items-start" *ngIf="data?.content">
+      <div class="col-lg-8 m-15px-tb">
+        <article class="article">
+          <div class="article-img">
+            <img [src]="data?.posterImageUrl" title="" alt="" />
+          </div>
+          <div class="article-title">
+            <h6><a href="#">{{data?.tags}}</a></h6>
+            <h2>{{ data?.title }}</h2>
+            <div class="media">
+              <div class="avatar">
+                <img [src]="image" title="" alt="" />
+              </div>
+              <div class="media-body">
+                <label>{{ data?.userId.name }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="article-content" [innerHTML]="data?.content">
+            <!-- Article -->
+          </div>
+          <!-- <div class="nav tag-cloud">
+                        <a href="#">Design</a>
+                        <a href="#">Development</a>
+                        <a href="#">Travel</a>
+                        <a href="#">Web Design</a>
+                        <a href="#">Marketing</a>
+                        <a href="#">Research</a>
+                        <a href="#">Managment</a>
+                    </div> -->
+        </article>
+        <div class="contact-form article-comment">
+          <app-article-comments></app-article-comments>
+        </div>
+      </div>
+      <div class="col-lg-4 m-15px-tb">
+        <app-blog-sidebar></app-blog-sidebar>
+      </div>
+    </div>
+  </div>
+</div>
